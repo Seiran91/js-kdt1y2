@@ -1,0 +1,12 @@
+@import url('https://unpkg.com/bootstrap@4.5.0/dist/css/bootstrap.min.css');
+
+h1,
+h2 {
+  font-family: Lato;
+}
+
+#main {
+  margin: auto;
+  text-align: center;
+  max-width: 500px;
+}
