@@ -71,17 +71,7 @@ function tab(data) {
   data.map((res) => {
     let tr = document.createElement('tr');
     tr.setAttribute('id', i);
-    tr.addEventListener('mouseover', () => {
-      let bt = document.createElement('button');
-      bt.setAttribute('id', 'button');
-      bt.classList.add("btn", "btn-secondary");
-      bt.innerHTML = 'Click';
-      bt.addEventListener('click', () => console.log('Clicked'));
-      tr.append(bt);
-    });
-    tr.addEventListener('mouseout', () => {
-      document.getElementById('button').remove();
-    });
+
     bod.append(tr);
     let th = document.createElement('th');
     th.setAttribute('scope', 'row');
@@ -93,9 +83,18 @@ function tab(data) {
     let title = document.createElement('td');
     title.innerHTML = res.Title;
 
+    let bt = document.createElement('button');
+    bt.setAttribute('id', 'button');
+    bt.classList.add('btn', 'btn-secondary');
+    bt.innerHTML = 'Click';
+    bt.addEventListener('click', () => console.log('Clicked'));
+
+    tr.addEventListener('mouseover', () => {
+      tr.append(bt);
+    });
+    tr.addEventListener('mouseout', () => {
+      tr.removeChild(document.getElementById('button'));
+    });
     tr.append(th, name, email, title);
   });
-}
-function test() {
-  console.log('Clicked!');
 }
