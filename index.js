@@ -50,21 +50,7 @@ function init() {
       console.error(error);
     });
 }
-function template(data) {
-  let row = document.getElementById('main'); // select main
-  let createUl = document.createElement('ul'); // create ul
-  createUl.classList.add('list-group'); // add class
-  createUl.innerHTML = '<p><mark>There is new content</mark</p>'; // this way also we create p element
-  row.append(createUl);
 
-  data.map((res) => {
-    let createLi = document.createElement('li');
-    createLi.setAttribute('id', 'list');
-    createLi.classList.add('list-group-item');
-    createUl.append(createLi);
-    createLi.innerHTML = res;
-  });
-}
 function tab(data) {
   let bod = document.getElementById('body');
   let i = 1;
